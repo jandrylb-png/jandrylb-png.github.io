@@ -335,7 +335,7 @@ function initGame(){
   loop();
   const wrap=document.getElementById('gameWrap');
   wrap.onclick=()=>{if(gState==='playing')bird.vy=-5.8;};
-  wrap.ontouchstart=e=>{e.preventDefault();if(gState==='playing')bird.vy=-5.8;};
+  wrap.ontouchstart=e=>{if(gState==='playing'){e.preventDefault();bird.vy=-5.8;}};
 }
 function die(){
   if(gState!=='playing')return;gState='dead';
